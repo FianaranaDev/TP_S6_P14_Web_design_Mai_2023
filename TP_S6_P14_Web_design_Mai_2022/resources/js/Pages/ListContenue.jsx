@@ -2,7 +2,7 @@ export default function getContenueByCategory({categorie}){
     return(
         <>
 
-                          <Head>
+        <Head>
             <title>{c.titre}</title>
             <meta name="description" content={c.snippet}/>
 
