@@ -19,6 +19,7 @@ class CategorieController extends Controller
         //initialisation pagination 2
             $categorie=Categorie::where('id','=',$id)->first();
             $categorie->contenues=$categorie->contenues()->paginate(2);
+            
 
         //redirection
             return Inertia::render('ListContenue',[

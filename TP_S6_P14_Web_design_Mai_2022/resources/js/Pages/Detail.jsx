@@ -1,23 +1,36 @@
 import { Head } from "@inertiajs/react";
-
-
-export default function getDetail({detail}){
+import NavBar from "@/Layouts/NavBar";
+import CDetail from "./CDetail";
+export default function getDetail({detail,categorie}){
     return(
         <>
-            <h1>{detail.titre}</h1>
-            <strong>{detail.snippet}</strong><br/>
-            {detail.datepublication}<br/>
-            {detail.paragraphes.data.map((p) => (
-                <>
-            <h1>{p.titrepara}</h1>
-              {p.descriptione}<br/>
-              <br/><br/><br/>
-        </>
-        ))}
+        {/* Navebar */}
+        <NavBar categorie={categorie} />
+
+    <main id="main">
+        <section class="single-post-content">
+        <div class="container">
+            {/* detail */}
+            <div class="row">
+                <CDetail detail={detail}/>
+            </div>
+            {/* detail */}
+    </div>
 
 
+    
+</section>
+</main>
 
-            <br/><br/><br/>
+<a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+
+<script src="assets/js/main.js"></script>
 
         </>
     );
