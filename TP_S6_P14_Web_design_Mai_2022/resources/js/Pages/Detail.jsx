@@ -2,7 +2,12 @@ export default function getDetail({detail}){
     return(
         <>
 
-            <Head title={detail.titre} />
+<Head>
+            <title>{detail.titre}</title>
+            <meta name="description" content={detail.titre}/>
+
+        </Head>
+
 
 
             <h1>{detail.titre}</h1>

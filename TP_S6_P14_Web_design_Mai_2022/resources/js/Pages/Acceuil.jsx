@@ -1,7 +1,13 @@
+import { Head } from "@inertiajs/react";
+
 export default function getContenue({contenue,categorie}){
     return(
         <>
+        <Head>
+            <title>liste</title>
+            <meta name="description" content="mlay le izy"/>
 
+        </Head>
 
 
             {contenue.map((c) => (
@@ -24,7 +30,7 @@ export default function getContenue({contenue,categorie}){
                                 <a href={"/category/"+z.id}>{z.nomcategorie}</a>
                         </>
                     ))}
-      
+
         </>
     );
 }

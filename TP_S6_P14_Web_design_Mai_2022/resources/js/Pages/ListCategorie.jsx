@@ -1,7 +1,11 @@
 export default function getAllCategorie({categorie}){
     return(
         <>
-                 <Head title="fds" />
+                <Head>
+            <title>Categorie</title>
+            <meta name="description" content="les categorie"/>
+
+        </Head>
 
            {categorie.map((c) => (
             <>
@@ -10,7 +14,7 @@ export default function getAllCategorie({categorie}){
 
 
         ))}
-        
+
         </>
     );
 }

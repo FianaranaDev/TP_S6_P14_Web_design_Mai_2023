@@ -1,7 +1,12 @@
 export default function getContenueByCategory({categorie}){
     return(
         <>
-                          <Head title={c.titre} />
+
+                          <Head>
+            <title>{c.titre}</title>
+            <meta name="description" content={c.snippet}/>
+
+        </Head>
 
 
 
@@ -18,7 +23,7 @@ export default function getContenueByCategory({categorie}){
             </>
 
         ))}
-          
+
         </>
     );
 }
