@@ -5,7 +5,7 @@ export default function getDetail({detail}){
     return(
         <>
 
-<Head>
+        <Head>
             <title>{detail.titre}</title>
             <meta name="description" content={detail.titre}/>
 
