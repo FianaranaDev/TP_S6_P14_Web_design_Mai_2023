@@ -1,3 +1,5 @@
+import { Head } from "@inertiajs/react";
+
 export default function getContenueByCategory({categorie}){
     return(
         <>
