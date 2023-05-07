@@ -16,7 +16,8 @@ class Paragraphe extends Model
         'id',
         'idcontenue',
         'titrepara',
+        'imagepara',
         'descriptione'
     ];
-    
+
 }
