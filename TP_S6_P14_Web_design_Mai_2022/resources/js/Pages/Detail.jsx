@@ -1,14 +1,14 @@
 import { Head } from "@inertiajs/react";
 import NavBar from "@/Layouts/NavBar";
 import CDetail from "./General/CDetail";
-export default function getDetail({detail,categorie}){
+export default function getDetail({detail,listcategorie}){
     return(
         <>
 
 
 
         {/* Navebar */}
-        <NavBar categorie={categorie} />
+        <NavBar categorie={listcategorie} />
 
 
             {/* detail */}

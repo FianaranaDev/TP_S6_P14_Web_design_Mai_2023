@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Categorie;
+use App\Models\Contenue;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 class CategorieController extends Controller
@@ -21,6 +22,7 @@ class CategorieController extends Controller
                 $categorie=Categorie::where('id','=',$request->get("id"))->first();
                 $categorie->contenues=$categorie->contenues()->paginate(2);
                 $listcategorie=Categorie::all();
+                $recent=Contenue::all();
             //page recent
 
             //tags
@@ -29,7 +31,8 @@ class CategorieController extends Controller
 
             return Inertia::render('ParCategorie',[
                 'categorie'=>$categorie,
-                'listcategorie'=>$listcategorie
+                'listcategorie'=>$listcategorie,
+                'recent'=>$recent
             ]);
     }
 

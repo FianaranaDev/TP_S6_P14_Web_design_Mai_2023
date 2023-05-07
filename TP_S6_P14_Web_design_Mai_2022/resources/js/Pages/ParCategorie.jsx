@@ -1,8 +1,11 @@
 import { Head } from "@inertiajs/react";
 import NavBar from "@/Layouts/NavBar";
 import Contenues from "./General/Contenues";
-import NavBarTemp from "@/Layouts/NavBarTemp";
-export default function getParCategorie({categorie,listcategorie}){
+import SideBarInf from "@/Layouts/SideBarInf";
+import SideBarCat from "@/Layouts/SideBarCat";
+import SideBarTag from "@/Layouts/SideBarTag";
+
+export default function getParCategorie({categorie,listcategorie,recent}){
     return(
         <>
 
@@ -11,11 +14,21 @@ export default function getParCategorie({categorie,listcategorie}){
             {/* navbar */}
             <NavBar categorie={listcategorie} />
 
+
+
+
+
+
+
             <main id="main">
                 <section>
-                    <div class="container">
-                        <div class="row">
-                            <h1 class="category-title">{categorie.nomcategorie}</h1>
+                    <div className="container">
+                        <div className="row">
+
+
+                            {/*  Contenue      */}
+                            <div className="col-md-9">
+                                <h1 class="category-title">{categorie.nomcategorie}</h1>
 
                             <Contenues contenue={categorie.contenues.data}/>
 
@@ -32,24 +45,25 @@ export default function getParCategorie({categorie,listcategorie}){
                                     <a href="#">5</a>
                                     <a href="#" class="next">Next</a>
                                 </div>
-
-
                             </div>
                         </div>
+                            {/* Fin Contenue      */}
+                            {/*  Sidebar  */}
+                            <div className="col-md-3">
+                                <SideBarInf recent={recent}/>
+                                <SideBarCat categorie={listcategorie}/>
+                                <SideBarTag/>
+                            </div>
+                            {/*  Sidebar  */}
+
+                        </div>
+
+
                     </div>
                 </section>
             </main>
 
-            <a href="#" className="scroll-top d-flex align-items-center justify-content-center"><i
-                className="bi bi-arrow-up-short"></i></a>
-
-            <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-            <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-            <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-            <script src="assets/vendor/aos/aos.js"></script>
-            <script src="assets/vendor/php-email-form/validate.js"></script>
-
-            <script src="assets/js/main.js"></script>
+      
         </>
     );
 }

@@ -4,12 +4,12 @@ import Contenues from "./General/Contenues";
 import SideBarInf from "@/Layouts/SideBarInf";
 import SideBarCat from "@/Layouts/SideBarCat";
 import SideBarTag from "@/Layouts/SideBarTag";
-export default function getContenue({contenue,categorie,recent}){
+export default function getContenue({contenue,listcategorie,recent}){
     return(
         <>
             <Head title={"List Contenue"}/>
             {/* navbar */}
-                <NavBar categorie={categorie} />
+                <NavBar categorie={listcategorie} />
             {/* navbar */}
 
 
@@ -41,7 +41,7 @@ export default function getContenue({contenue,categorie,recent}){
                         {/*  Sidebar  */}
                                 <div className="col-md-3">
                                         <SideBarInf recent={recent}/>
-                                        <SideBarCat categorie={categorie}/>
+                                        <SideBarCat categorie={listcategorie}/>
                                         <SideBarTag/>
                                 </div>
                     {/*  Sidebar  */}
