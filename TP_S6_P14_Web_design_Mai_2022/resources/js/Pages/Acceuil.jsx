@@ -1,9 +1,12 @@
 import { Head } from "@inertiajs/react";
 import NavBar from "@/Layouts/NavBar";
-import Contenues from "./Contenues";
+import Contenues from "./General/Contenues";
 export default function getContenue({contenue,categorie}){
     return(
         <>
+
+            <Head title={"List Contenue"}/>
+
         {/* navbar */}
             <NavBar categorie={categorie} />
 
@@ -14,6 +17,8 @@ export default function getContenue({contenue,categorie}){
                     <h1 class="category-title">List </h1>
 
                 <Contenues contenue={contenue}/>
+
+
 
 
             <div class="text-start py-4">
@@ -27,7 +32,7 @@ export default function getContenue({contenue,categorie}){
                 <a href="#" class="next">Next</a>
               </div>
 
-              
+
                     </div>
                 </div>
             </div>

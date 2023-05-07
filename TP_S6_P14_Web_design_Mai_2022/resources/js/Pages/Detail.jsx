@@ -1,9 +1,12 @@
 import { Head } from "@inertiajs/react";
 import NavBar from "@/Layouts/NavBar";
-import CDetail from "./CDetail";
+import CDetail from "./General/CDetail";
 export default function getDetail({detail,categorie}){
     return(
         <>
+
+
+
         {/* Navebar */}
         <NavBar categorie={categorie} />
 
@@ -18,7 +21,6 @@ export default function getDetail({detail,categorie}){
     </div>
 
 
-    
 </section>
 </main>
 

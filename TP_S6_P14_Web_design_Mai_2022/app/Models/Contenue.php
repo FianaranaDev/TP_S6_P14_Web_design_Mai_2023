@@ -13,9 +13,12 @@ class Contenue extends Model
     protected $timstamps=false;
     public $fillable=[
         'id',
+        'keywords',
         'titre',
         'idCategorie',
+        'resume',
         'snippet',
+        'descriimage',
         'datepublication'
     ];
 
