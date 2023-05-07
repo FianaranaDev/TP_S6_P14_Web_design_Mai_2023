@@ -11,7 +11,7 @@ export default function Contenues({contenue}){
                     <div>
 
 
-                    <div class="post-meta"><span class="date">{c.snippet}</span> <span class="mx-1">&bullet;</span> <span>{c.datepublication}</span></div>
+                    <div class="post-meta"><span class="date">{c.snippet}</span> <span class="mx-1">;</span> <span>{c.datepublication}</span></div>
                         <h2><a href={"/detail?id="+c.id} >{c.titre}</a></h2>
                             <p>{c.resume}</p>
                     </div>

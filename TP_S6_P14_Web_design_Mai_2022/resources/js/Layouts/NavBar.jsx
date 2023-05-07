@@ -36,7 +36,7 @@ export default function NavBar({categorie}) {
                         <nav id="navbar" class="navbar">
                         <ul>
                             <li><a href="/">List Aleatoire</a></li>
-                            <li class="dropdown"><a href="category.html"><span>Categories</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                            <li class="dropdown"><a href="#"><span>Categories</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
 
                             <ul>
                             {categorie.map((z) => (

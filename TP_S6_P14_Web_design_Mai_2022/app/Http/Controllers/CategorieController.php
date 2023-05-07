@@ -25,7 +25,7 @@ class CategorieController extends Controller
                 $recent=Contenue::all();
             //page recent
 
-            //tags
+
 
         //redirection
 

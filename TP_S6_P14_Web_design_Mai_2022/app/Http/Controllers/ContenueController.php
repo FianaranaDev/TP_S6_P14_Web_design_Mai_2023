@@ -10,11 +10,14 @@ class ContenueController extends Controller
 {
     function getAcceuil(){
         //initialisation donnee
-            $contenue=Contenue::all();
+            $contenue=Contenue::paginate(1);
             $listcategorie=Categorie::all();
-            $recent=Contenue::all();
+            //date recent ordre decroisante en evitant order by
+                $recent = Contenue::orderBy('datepublication', 'desc')->get();
 
-            //redirection
+
+
+        //redirection
             return Inertia::render('Acceuil',[
                 'contenue'=>$contenue,
                 'listcategorie'=>$listcategorie,
