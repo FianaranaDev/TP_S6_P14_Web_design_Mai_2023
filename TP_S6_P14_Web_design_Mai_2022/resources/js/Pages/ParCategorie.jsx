@@ -4,6 +4,8 @@ import Contenues from "./General/Contenues";
 import SideBarInf from "@/Layouts/SideBarInf";
 import SideBarCat from "@/Layouts/SideBarCat";
 import SideBarTag from "@/Layouts/SideBarTag";
+import Footer from "@/Layouts/Footer";
+import Pagination from "@/Layouts/Pagination";
 
 export default function getParCategorie({categorie,listcategorie,recent}){
     return(
@@ -26,18 +28,10 @@ export default function getParCategorie({categorie,listcategorie,recent}){
                                 <h1 class="category-title">{categorie.nomcategorie}</h1>
 
                             <Contenues contenue={categorie.contenues.data}/>
-                                
-                            <div class="text-start py-4">
-                                <div class="custom-pagination">
-                                    <a href="#" class="prev">Prevous</a>
-                                    <a href="#" class="active">1</a>
-                                    <a href="#">2</a>
-                                    <a href="#">3</a>
-                                    <a href="#">4</a>
-                                    <a href="#">5</a>
-                                    <a href="#" class="next">Next</a>
-                                </div>
-                            </div>
+
+                                {/*  Pagination      */}
+                                <Pagination contenue={categorie.contenues}/>
+                                {/*  Pagination      */}
                         </div>
                             {/* Fin Contenue      */}
                             {/*  Sidebar  */}
@@ -54,7 +48,7 @@ export default function getParCategorie({categorie,listcategorie,recent}){
                     </div>
                 </section>
             </main>
-
+            <Footer categorie={listcategorie} recent={recent}/>
 
         </>
     );
