@@ -13,13 +13,14 @@ class ContenueController extends Controller
             $contenue=Contenue::all();
             $categorie=Categorie::all();
 
+            $recent=Contenue::all();
 
-
-        //redirection
+            //redirection
 
             return Inertia::render('Acceuil',[
                 'contenue'=>$contenue,
-                'categorie'=>$categorie
+                'categorie'=>$categorie,
+                'recent'=>$recent
             ]);
     }
 

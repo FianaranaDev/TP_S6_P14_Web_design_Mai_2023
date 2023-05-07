@@ -17,14 +17,19 @@ class CategorieController extends Controller
     }
     function getParCategorie(Request $request){
         //initialisation pagination 2
-            $categorie=Categorie::where('id','=',$request->get("id"))->first();
-            $categorie->contenues=$categorie->contenues()->paginate(2);
-            $cat=Categorie::all();
+            //categorie et contnue du premier page
+                $categorie=Categorie::where('id','=',$request->get("id"))->first();
+                $categorie->contenues=$categorie->contenues()->paginate(2);
+                $listcategorie=Categorie::all();
+            //page recent
+
+            //tags
+
         //redirection
 
             return Inertia::render('ParCategorie',[
                 'categorie'=>$categorie,
-                'cat'=>$cat
+                'listcategorie'=>$listcategorie
             ]);
     }
 

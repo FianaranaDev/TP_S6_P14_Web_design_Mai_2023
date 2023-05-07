@@ -2,14 +2,14 @@ import { Head } from "@inertiajs/react";
 import NavBar from "@/Layouts/NavBar";
 import Contenues from "./General/Contenues";
 import NavBarTemp from "@/Layouts/NavBarTemp";
-export default function getParCategorie({categorie,cat}){
+export default function getParCategorie({categorie,listcategorie}){
     return(
         <>
 
             <Head title={categorie.nomcategorie}/>
 
             {/* navbar */}
-            <NavBar categorie={cat} />
+            <NavBar categorie={listcategorie} />
 
             <main id="main">
                 <section>
