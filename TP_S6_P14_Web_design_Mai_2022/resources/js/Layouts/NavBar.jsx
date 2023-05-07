@@ -6,9 +6,7 @@ export default function NavBar({categorie}) {
                     <meta charset="utf-8"></meta>
                     <meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
 
-                    <title>ZenBlog Bootstrap Template - Index</title>
-                    <meta content="" name="description"></meta>
-                    <meta content="" name="keywords"></meta>
+
 
                     <link href="assets/img/favicon.png" rel="icon"></link>
                     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"></link>
@@ -32,20 +30,19 @@ export default function NavBar({categorie}) {
 
                         <a href="index.html" class="logo d-flex align-items-center">
 
-                        <h1>ZenBlog</h1>
+                        <h1>IA blog</h1>
                         </a>
 
                         <nav id="navbar" class="navbar">
                         <ul>
-                            <li><a href="index.html">Blog</a></li>
-                            <li><a href="single-post.html">Single Post</a></li>
+                            <li><a href="/">List Aleatoire</a></li>
                             <li class="dropdown"><a href="category.html"><span>Categories</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
 
                             <ul>
                             {categorie.map((z) => (
                                 <>
 
-                                <li><a href={"/category/"+z.id}>{z.nomcategorie}</a></li>
+                                <li><a href={"/category?id="+z.id}>{z.nomcategorie}</a></li>
 
 
                                 </>
@@ -58,21 +55,11 @@ export default function NavBar({categorie}) {
                         </nav>
 
                         <div class="position-relative">
-                        <a href="#" class="mx-2"><span class="bi-facebook"></span></a>
-                        <a href="#" class="mx-2"><span class="bi-twitter"></span></a>
-                        <a href="#" class="mx-2"><span class="bi-instagram"></span></a>
 
-                        <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
-                        <i class="bi bi-list mobile-nav-toggle"></i>
+                            <p><input type="text" placeholder="Search" className="form-control"></input></p>
+                            <input type="button" value="valider"></input>
 
 
-                        <div class="search-form-wrap js-search-form-wrap">
-                            <form action="search-result.html" class="search-form">
-                            <span class="icon bi-search"></span>
-                            <input type="text" placeholder="Search" class="form-control"></input>
-                            <button class="btn js-search-close"><span class="bi-x"></span></button>
-                            </form>
-                        </div>
 
                         </div>
 

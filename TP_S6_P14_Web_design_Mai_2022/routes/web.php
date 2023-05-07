@@ -21,7 +21,7 @@ use Inertia\Inertia;
 //page acceuil
     Route::get('/',[App\Http\Controllers\ContenueController::class,'getAcceuil']);
 //page contenue par Categorie
-    Route::get('/category/{id}',[App\Http\Controllers\CategorieController::class,'getCategorie']);
+    Route::get('/category',[App\Http\Controllers\CategorieController::class,'getParCategorie']);
 //detail contenue
     Route::get('/detail',[App\Http\Controllers\ContenueController::class,'getContenue']);
 

@@ -15,15 +15,16 @@ class CategorieController extends Controller
                 'categorie'=>$categorie
             ]);
     }
-    function getCategorie($id){
+    function getParCategorie(Request $request){
         //initialisation pagination 2
-            $categorie=Categorie::where('id','=',$id)->first();
+            $categorie=Categorie::where('id','=',$request->get("id"))->first();
             $categorie->contenues=$categorie->contenues()->paginate(2);
-            
-
+            $cat=Categorie::all();
         //redirection
-            return Inertia::render('ListContenue',[
-                'categorie'=>$categorie
+
+            return Inertia::render('ParCategorie',[
+                'categorie'=>$categorie,
+                'cat'=>$cat
             ]);
     }
 

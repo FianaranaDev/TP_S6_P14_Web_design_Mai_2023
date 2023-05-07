@@ -1,6 +1,9 @@
 import { Head } from "@inertiajs/react";
 import NavBar from "@/Layouts/NavBar";
 import Contenues from "./General/Contenues";
+import SideBarInf from "@/Layouts/SideBarInf";
+import SideBarCat from "@/Layouts/SideBarCat";
+import SideBarTag from "@/Layouts/SideBarTag";
 export default function getContenue({contenue,categorie}){
     return(
         <>
@@ -14,9 +17,11 @@ export default function getContenue({contenue,categorie}){
         <section>
             <div class="container">
                 <div class="row">
+                    <div className="col-md-9" >
+
                     <h1 class="category-title">List </h1>
 
-                <Contenues contenue={contenue}/>
+                    <Contenues contenue={contenue}/>
 
 
 
@@ -31,9 +36,17 @@ export default function getContenue({contenue,categorie}){
                 <a href="#">5</a>
                 <a href="#" class="next">Next</a>
               </div>
-
-
                     </div>
+                </div>
+
+                {/*  Sidebar  */}
+                    <div className="col-md-3">
+                            <SideBarInf/>
+                            <SideBarCat/>
+                            <SideBarTag/>
+                    </div>
+                {/*  Sidebar  */}
+
                 </div>
             </div>
         </section>
