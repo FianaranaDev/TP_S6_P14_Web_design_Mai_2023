@@ -18,7 +18,7 @@ class ContenueController extends Controller
 
 
         //redirection
-            return Inertia::render('Acceuil',[
+            return Inertia::render('FO/Acceuil',[
                 'contenue'=>$contenue,
                 'listcategorie'=>$listcategorie,
                 'recent'=>$recent
@@ -34,7 +34,7 @@ class ContenueController extends Controller
 
 
         //redirection
-            return Inertia::render('Detail',[
+            return Inertia::render('FO/Detail',[
                 'detail'=>$detail,
                 'listcategorie'=>$listcategorie
             ]);

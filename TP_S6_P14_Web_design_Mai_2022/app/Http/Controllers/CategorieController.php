@@ -12,7 +12,7 @@ class CategorieController extends Controller
         //initialisation
             $categorie=Categorie::all();
         //redirection
-            return Inertia::render('ListCategorie',[
+            return Inertia::render('FO/ListCategorie',[
                 'categorie'=>$categorie
             ]);
     }
@@ -29,7 +29,7 @@ class CategorieController extends Controller
 
         //redirection
 
-            return Inertia::render('ParCategorie',[
+            return Inertia::render('FO/ParCategorie',[
                 'categorie'=>$categorie,
                 'listcategorie'=>$listcategorie,
                 'recent'=>$recent

@@ -1,4 +1,4 @@
-import FooterContenues from "@/Layouts/FooterContenues";
+import FooterContenues from "@/Layouts/FOL/FooterContenues";
 
 export default function Footer({categorie,recent}) {
     return (

@@ -1,11 +1,11 @@
 import { Head } from "@inertiajs/react";
-import NavBar from "@/Layouts/NavBar";
-import Contenues from "./General/Contenues";
-import SideBarInf from "@/Layouts/SideBarInf";
-import SideBarCat from "@/Layouts/SideBarCat";
-import SideBarTag from "@/Layouts/SideBarTag";
-import Footer from "@/Layouts/Footer";
-import Pagination from "@/Layouts/Pagination";
+import NavBar from "@/Layouts/FOL/NavBar";
+import Contenues from "@/Pages/FO/General/Contenues";
+import SideBarInf from "@/Layouts/FOL/SideBarInf";
+import SideBarCat from "@/Layouts/FOL/SideBarCat";
+import SideBarTag from "@/Layouts/FOL/SideBarTag";
+import Footer from "@/Layouts/FOL/Footer";
+import Pagination from "@/Layouts/FOL/Pagination";
 
 export default function getParCategorie({categorie,listcategorie,recent}){
     return(

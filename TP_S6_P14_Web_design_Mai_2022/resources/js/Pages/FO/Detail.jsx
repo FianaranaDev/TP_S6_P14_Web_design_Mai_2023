@@ -1,6 +1,6 @@
 import { Head } from "@inertiajs/react";
-import NavBar from "@/Layouts/NavBar";
-import CDetail from "./General/CDetail";
+import NavBar from "@/Layouts/FOL/NavBar";
+import CDetail from "@/Pages/FO/General/CDetail";
 export default function getDetail({detail,listcategorie}){
     return(
         <>
