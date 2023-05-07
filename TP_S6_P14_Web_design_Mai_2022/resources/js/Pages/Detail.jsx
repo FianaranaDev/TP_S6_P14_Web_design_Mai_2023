@@ -10,19 +10,20 @@ export default function getDetail({detail,categorie}){
         {/* Navebar */}
         <NavBar categorie={categorie} />
 
-    <main id="main">
-        <section class="single-post-content">
-        <div class="container">
+
             {/* detail */}
-            <div class="row">
+
+            <main id="main">
                 <CDetail detail={detail}/>
-            </div>
+            </main>
             {/* detail */}
-    </div>
 
 
-</section>
-</main>
+
+
+
+
+
 
 <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

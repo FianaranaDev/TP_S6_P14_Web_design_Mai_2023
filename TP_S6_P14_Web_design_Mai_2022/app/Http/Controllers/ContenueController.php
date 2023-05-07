@@ -12,11 +12,9 @@ class ContenueController extends Controller
         //initialisation donnee
             $contenue=Contenue::all();
             $categorie=Categorie::all();
-
             $recent=Contenue::all();
 
             //redirection
-
             return Inertia::render('Acceuil',[
                 'contenue'=>$contenue,
                 'categorie'=>$categorie,
@@ -29,6 +27,7 @@ class ContenueController extends Controller
             $detail=Contenue::find($request->get("id"));
             $detail->paragraphes=$detail->paragraphes()->paginate(3);
             $categorie=Categorie::all();
+
 
 
         //redirection
