@@ -17,6 +17,7 @@ class Contenue extends Model
         'titre',
         'idCategorie',
         'resume',
+        'image',
         'snippet',
         'descriimage',
         'datepublication'

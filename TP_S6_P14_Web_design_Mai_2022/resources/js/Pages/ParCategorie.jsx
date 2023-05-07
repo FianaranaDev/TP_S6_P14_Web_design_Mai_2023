@@ -15,11 +15,6 @@ export default function getParCategorie({categorie,listcategorie,recent}){
             <NavBar categorie={listcategorie} />
 
 
-
-
-
-
-
             <main id="main">
                 <section>
                     <div className="container">
@@ -31,10 +26,7 @@ export default function getParCategorie({categorie,listcategorie,recent}){
                                 <h1 class="category-title">{categorie.nomcategorie}</h1>
 
                             <Contenues contenue={categorie.contenues.data}/>
-
-
-
-
+                                
                             <div class="text-start py-4">
                                 <div class="custom-pagination">
                                     <a href="#" class="prev">Prevous</a>
@@ -63,7 +55,7 @@ export default function getParCategorie({categorie,listcategorie,recent}){
                 </section>
             </main>
 
-      
+
         </>
     );
 }
