@@ -32,6 +32,8 @@ Route::get('/user', [App\Http\Controllers\UtilisateurController::class, 'create'
 
 //Back office
     //List contenue  Delete Update
+        Route::get('/admin/login',[App\Http\Controllers\ContenueController::class,'listDU']);
+
         Route::get('/admin/con',[App\Http\Controllers\ContenueController::class,'listDU']);
                     //ajout
         Route::get('admin/contenue',[App\Http\Controllers\ContenueController::class,'add']);
@@ -48,6 +50,7 @@ Route::get('/user', [App\Http\Controllers\UtilisateurController::class, 'create'
             Route::get('/admin/categorie',[App\Http\Controllers\CategorieController::class,'add']);
         //insert
             Route::get('/admin/categorie/add',[App\Http\Controllers\CategorieController::class,'insert']);
+        //
 
 
 
