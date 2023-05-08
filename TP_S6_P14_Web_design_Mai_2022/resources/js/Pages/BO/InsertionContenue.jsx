@@ -1,88 +1,196 @@
 import {useState} from "react";
 import axios from "axios";
+import HeaderBO from "@/Layouts/BOL/HeaderBO";
+import InsertionC from "@/Pages/BO/InsertC";
 
 export default function InsertionContenue({listcategorie}) {
+    const[paragraphes,setParagraphes]=useState(
+        <div className="card">
+            <div className="card-body">
+                <h2 className="card-title">Paragraphe</h2>
+
+                <div className="row g-3">
+                    <div className="col-md-12">
+                        <div className="form-floating">
+                            <input type="text" name="titrepara[]" className="form-control" id="floatingName"
+                                   placeholder="Your Name"></input>
+                            <label htmlFor="floatingName">titre</label>
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="form-floating">
+
+                            <input type="file" name="imagepara[]" className="form-control" id="floatingEmail"
+                                   placeholder="Your Email"></input>
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="form-floating">
+                            <input type="password" className="form-control"
+                                   id="floatingPassword" placeholder="Password"></input>
+                            <label htmlFor="floatingPassword">descrit image</label>
+                        </div>
+                    </div>
+                    <div className="col-12">
+                        <div className="form-floating">
+                                                    <textarea name="descriptione[]" className="form-control" placeholder="Address"
+                                                              id="floatingTextarea" ></textarea>
+                            <label htmlFor="floatingTextarea">paragrapne</label>
+                        </div>
+                    </div>
 
 
 
-        const [form, setForm] = useState({
-            keywords: '',
-            titre: '',
-            idcategorie: listcategorie[0].id,
-            resume: '',
-            image: '',
-            snippet: '',
-            descriimage: '',
-            datepublication: '',
-        });
+                </div>
 
-        function handleChange(e) {
-            const key = e.target.name;
-            const value = e.target.value;
+            </div>
+        </div>
+    );
+    const addPara=(event)=>{
+        event.preventDefault();
+      setParagraphes(<>
+          {paragraphes}
 
-            setForm(prevForm => ({
-                ...prevForm,
-                [key]: value,
-            }));
-        }
+          <div className="card">
+              <div className="card-body">
+                  <h2 className="card-title">Paragraphe</h2>
 
-        function handleSubmit(e) {
-            e.preventDefault();
-            //encovoye
-            axios.get('/contenue/add',{params: form})
-                .then(response=>{
-                    console.log(response.data);
-                })
-                .catch(error=>{
-                    console.error(error);
-                })
-        }
+                  <div className="row g-3">
+                      <div className="col-md-12">
+                          <div className="form-floating">
+                              <input type="text" name="titrepara[]" className="form-control" id="floatingName"
+                                     placeholder="Your Name"></input>
+                              <label htmlFor="floatingName">titre</label>
+                          </div>
+                      </div>
+                      <div className="col-md-6">
+                          <div className="form-floating">
 
-        return (
+                              <input type="file" name="imagepara[]" className="form-control" id="floatingEmail"
+                                     placeholder="Your Email"></input>
+                          </div>
+                      </div>
+                      <div className="col-md-6">
+                          <div className="form-floating">
+                              <input type="text" className="form-control"
+                                     id="floatingPassword" placeholder=""></input>
+                              <label htmlFor="floatingPassword">descrit image</label>
+                          </div>
+                      </div>
+                      <div className="col-12">
+                          <div className="form-floating">
+                                                    <textarea name="descriptione[]" className="form-control" placeholder="Address"
+                                                              id="floatingTextarea" ></textarea>
+                              <label htmlFor="floatingTextarea">paragrapne</label>
+                          </div>
+                      </div>
+
+
+
+                  </div>
+
+              </div>
+          </div>
+      </>)
+    };
+
+
+
+    return (
             <>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="idcategorie">Catégorie</label>
-                    <select name="idcategorie" id="idcategorie" value={form.idcategorie} onChange={handleChange}>
-                        {listcategorie.map(category => (
-                            <option key={category.id} value={category.id}>
-                                {category.nomcategorie}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-                <div>
-                    <label htmlFor="keywords">Mots clés</label>
-                    <input type="text" name="keywords" id="keywords" value={form.keywords} onChange={handleChange} />
-                </div>
-                <div>
-                    <label htmlFor="titre">Titre</label>
-                    <input type="text" name="titre" id="titre" value={form.titre} onChange={handleChange} />
-                </div>
-                <div>
-                    <label htmlFor="resume">Résumé</label>
-                    <textarea name="resume" id="resume" value={form.resume} onChange={handleChange}></textarea>
-                </div>
-                <div>
-                    <label htmlFor="image">Image</label>
-                    <input type="text" name="image" id="image" value={form.image} onChange={handleChange} />
-                </div>
-                <div>
-                    <label htmlFor="snippet">Snippet</label>
-                    <textarea name="snippet" id="snippet" value={form.snippet} onChange={handleChange}></textarea>
-                </div>
-                <div>
-                    <label htmlFor="descriimage">Description de l'image</label>
-                    <textarea name="descriimage" id="descriimage" value={form.descriimage} onChange={handleChange}></textarea>
-                </div>
-                <div>
-                    <label htmlFor="datepublication">Date de publication</label>
-                    <input type="date" name="datepublication" id="datepublication" value={form.datepublication} onChange={handleChange} />
-                </div>
-                <button type="submit">Créer</button>
-            </form>
-            </>
 
+
+                <HeaderBO/>
+                <main id="main" className="main">
+
+        <form method="GET" action="insert"   enctype="multipart/form-data">
+                    <section className="section">
+                        <div className="row">
+
+                            <div className="col-lg-12">
+
+
+
+
+                                <div className="card">
+                                    <div className="card-body">
+                                        <h1 className="card-title">Ajout Contenue</h1>
+
+                                        <div className="row g-3" >
+                                            <div className="col-md-6">
+                                                <label htmlFor="inputEmail5" className="form-label">Titre</label>
+                                                <input type="text" name="titre" className="form-control" id="inputEmail5"></input>
+                                            </div>
+                                            <div className="col-md-6">
+                                                <label htmlFor="inputPassword5" className="form-label">Categorie</label>
+                                                <select className="form-select" aria-label="Default select example">
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select>
+
+
+                                            </div>
+                                            <div className="col-md-12">
+
+                                                <label htmlFor="inputName5" className="form-label">Resume</label>
+                                                <input type="text" name="resume" className="form-control" id="inputName5"></input>
+                                            </div>
+
+                                            <div className="col-md-12">
+
+                                                <label htmlFor="inputName5" className="form-label">Snippet</label>
+                                                <input type="text" name="snippet" className="form-control" id="inputName5"></input>
+                                            </div>
+
+                                            <div className="col-md-6">
+                                                <label htmlFor="inputEmail5" className="form-label">Mots cles</label>
+                                                <input type="text" name="keywords" className="form-control" id="inputEmail5"></input>
+                                            </div>
+                                            <div className="col-md-6">
+                                                <label htmlFor="inputPassword5" className="form-label">Date de
+                                                    publication</label>
+                                                <input type="date" name="datepublication" className="form-control"></input>
+
+                                            </div>
+
+
+                                            <div className="col-md-6">
+                                                <label htmlFor="inputPassword5" className="form-label">Image</label>
+                                                <input className="form-control" type="file" name="image" id="formFile"></input></div>
+                                            <div className="col-md-6">
+                                                <label htmlFor="inputCity" className="form-label">description
+                                                    l'image</label>
+                                                <input type="text" name="descriimage" className="form-control" id="inputCity"></input>
+                                            </div>
+
+
+                                            <div className="text-center">
+
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <button  className="btn btn-primary" onClick={addPara} >Ajout Paragraphe</button>
+                                </div>
+                                {paragraphes}
+                            </div>
+                            <input type="submit" className="btn btn-success"   value="valider"></input>
+
+                        </div>
+                    </section>
+                   </form>
+                </main>
+
+
+
+
+
+
+
+        </>
 
 );
 }

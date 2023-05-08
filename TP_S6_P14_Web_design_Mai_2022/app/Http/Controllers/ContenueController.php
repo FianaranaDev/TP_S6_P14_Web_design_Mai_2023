@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Contenue;
 use App\Models\Categorie;
+use App\Models\Paragraphe;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -39,32 +40,39 @@ class ContenueController extends Controller
                 'listcategorie'=>$listcategorie
             ]);
     }
-    //upload image
-            public function test()
-            {
+
+
+//BO
+        //list
+            public function listDU(){
                 //initialisation des donnees
-                return Inertia::render('BO/TestImage');
+                    $contenue=Contenue::paginate(3);
+
+
+                //disp
+                return Inertia::render('BO/ListContenue',
+                    [
+                        'contenue'=>$contenue
+                    ]
+                );
             }
-            public function upload(Request $request)
-            {
-                // Vérifier si le fichier a été envoyé
-                if ($request->hasFile('image')) {
-                    // Obtenir le fichier envoyé
-                    $image = $request->file('image');
-                    // Générer un nom de fichier unique
-                    $filename = uniqid() . '.' . $image->getClientOriginalExtension();
-                    // Déplacer le fichier vers le dossier de destination
-                    $image->move(public_path('uploads'), $filename);
-                    // Sauvegarder le nom de fichier dans la base de données
-                    $data = ['filename' => $filename];
-                    Image::create($data);
-                    // Rediriger l'utilisateur vers la page de succès
-                    return redirect('/success');
-                } else {
-                    // Rediriger l'utilisateur vers la page d'erreur
-                    return redirect('/error');
-                }
-            }
+
+          //delete
+        public function delete(Request $request){
+
+            Paragraphe::where('idcontenue',$request->get("id"))->delete();
+            Contenue::find($request->get("id"))->delete();
+
+            //initialisation des donnees
+                $contenue=Contenue::paginate(3);
+            //disp
+            return Inertia::render('BO/ListContenue',
+                [
+                    'contenue'=>$contenue
+                ]
+            );
+        }
+
 
 
 
@@ -80,7 +88,6 @@ class ContenueController extends Controller
                 //initialisation des donnees
                     $listcategorie=Categorie::all();
 
-
             return Inertia::render('BO/InsertionContenue',
                 [
                     'listcategorie'=>$listcategorie
@@ -89,7 +96,9 @@ class ContenueController extends Controller
         }
         public function insert(Request $request)
         {
-            $contenu = Contenue::create([
+
+
+            $contenu = [
                 'keywords' => $request->input('keywords'),
                 'titre' => $request->input('titre'),
                 'idcategorie' => $request->input('idcategorie'),
@@ -98,9 +107,23 @@ class ContenueController extends Controller
                 'snippet' => $request->input('snippet'),
                 'descriimage' => $request->input('descriimage'),
                 'datepublication' => $request->input('datepublication')
-            ]);
+            ];
 
-            return $contenu;
+
+            $idcontenue = $request->get('idcontenue');
+            $titrepara = $request->get('titrepara');
+            $imagepara = $request->get('imagepara');
+            $descriptione = $request->get('descriptione');
+
+            $paragraphe = [
+                'idcontenue' => $idcontenue,
+                'titrepara' => $titrepara,
+                'imagepara' => $imagepara,
+                'descriptione' => $descriptione
+            ];
+
+
+            return  $request->get('titrepara');
         }
 
 

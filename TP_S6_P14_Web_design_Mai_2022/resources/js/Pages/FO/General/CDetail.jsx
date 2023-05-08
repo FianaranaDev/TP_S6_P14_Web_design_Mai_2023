@@ -2,12 +2,11 @@ import {Head} from "@inertiajs/react";
 import {useState} from "react";
 
 export default function CDetail({detail}){
-
-
-    const tay = (paragraphes) => {
+    const ck = (paragraphes) => {
+        //
         let elementsJSX = [];
         let useDiv = true;
-
+        //
         for (let i = 0; i < paragraphes.length; i++) {
             if (useDiv) {
                 elementsJSX.push(
@@ -49,25 +48,16 @@ export default function CDetail({detail}){
                  <meta name="description" content={detail.snippet}/>
                  <meta name="keywords" content={detail.keywords}/>
              </Head>
-
              <section>
-
              <div className="container" >
-
-
                  <div className="row">
                      <div className="col-lg-12 text-center mb-5">
                          <h1 className="page-title">{detail.titre}</h1>
                      </div>
                  </div>
-
-
                  <div className="row mb-5">
-                             {tay(detail.paragraphes.data)}
-
-
+                             {ck(detail.paragraphes.data)}
                  </div>
-
              </div>
              </section>
             </>

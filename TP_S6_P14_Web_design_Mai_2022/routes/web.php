@@ -15,17 +15,9 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Route::get('/',[App\Http\Controllers\CategorieController::class,'getAllCategorie']);
-
-//test insertion
-
-
 
 
 Route::get('/user', [App\Http\Controllers\UtilisateurController::class, 'create']);
-
-
-
 //Front office
     //page acceuil
         Route::get('/',[App\Http\Controllers\ContenueController::class,'getAcceuil']);
@@ -34,20 +26,30 @@ Route::get('/user', [App\Http\Controllers\UtilisateurController::class, 'create'
     //detail contenue
         Route::get('/detail',[App\Http\Controllers\ContenueController::class,'getContenue']);
 
+
+
+
+
 //Back office
-    //insertion categorie
-        //Route::get('/',[App\Http\Controllers\CategorieController::class,'add']);
-        Route::get('/categorie/add',[App\Http\Controllers\CategorieController::class,'insert']);
-    //insertion contenue
-        //Route::get('/',[App\Http\Controllers\ContenueController::class,'test']);
-        Route::get('/contenue/add',[App\Http\Controllers\ContenueController::class,'insert']);
+    //List contenue  Delete Update
+        Route::get('/admin/con',[App\Http\Controllers\ContenueController::class,'listDU']);
+                    //ajout
+        Route::get('admin/contenue',[App\Http\Controllers\ContenueController::class,'add']);
+                    //insert
+        Route::get('admin/insert',[App\Http\Controllers\ContenueController::class,'insert']);
 
-        Route::get('/upload',[App\Http\Controllers\ContenueController::class,'upload']);
+                    //delete
+        Route::get('admin/delete/contenue/',[App\Http\Controllers\ContenueController::class,'delete']);
+
+//update
+
+    //Categorie
+        //ajout
+            Route::get('/admin/categorie',[App\Http\Controllers\CategorieController::class,'add']);
+        //insert
+            Route::get('/admin/categorie/add',[App\Http\Controllers\CategorieController::class,'insert']);
 
 
-    //insertion paragraphe
-        //Route::get('/',[App\Http\Controllers\ParagrapheControlleur::class,'add']);
-        Route::get('/paragraphe/add',[App\Http\Controllers\ParagrapheControlleur::class,'insert']);
 
 
 require __DIR__.'/auth.php';
