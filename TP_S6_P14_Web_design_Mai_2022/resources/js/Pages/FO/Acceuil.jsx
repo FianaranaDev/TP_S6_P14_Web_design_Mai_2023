@@ -11,7 +11,9 @@ import Pagination from "@/Layouts/FOL/Pagination";
 export default function getContenue({contenue,listcategorie,recent}){
     return(
         <>
-            <Head> <title>"List Contenue"</title>
+            <Head>
+
+                <title>List Contenue</title>
                 <meta name="descritpion" content="List Contenue-ia-information"></meta>
 
 
