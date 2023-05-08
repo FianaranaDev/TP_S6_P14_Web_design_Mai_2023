@@ -11,13 +11,10 @@ export default function getParCategorie({categorie,listcategorie,recent}){
     return(
         <>
             <Head>
-
                 <title>{categorie.nomcategorie}</title>
-                <meta name="descritpion" content="List Contenue-ia-information"></meta>
-
-
+                <meta name="description" content="List Contenue-ia-information"></meta>
             </Head>
-         
+
 
             {/* navbar */}
             <NavBar categorie={listcategorie} />

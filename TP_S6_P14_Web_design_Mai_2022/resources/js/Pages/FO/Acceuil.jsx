@@ -13,7 +13,7 @@ export default function getContenue({contenue,listcategorie,recent}){
         <>
             <Head>
                 <title>List Contenue</title>
-                <meta name="descritpion" content="List Contenue-ia-information"/>
+                <meta name="description" content="List Contenue-ia-information"/>
 
             </Head>
 

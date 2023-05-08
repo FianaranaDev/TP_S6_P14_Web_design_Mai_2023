@@ -5,6 +5,7 @@ use App\Models\Contenue;
 use App\Models\Categorie;
 use App\Models\Paragraphe;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Inertia\Inertia;
 
 class ContenueController extends Controller
@@ -96,34 +97,65 @@ class ContenueController extends Controller
         }
         public function insert(Request $request)
         {
+            //insertion contenue
+                $keywords = $request->get('keywords');
+                $titre = $request->get('titre');
+                $idcategorie= $request->get('idcategorie');
+                $resume = $request->get('resume');
+                $snippet = $request->get('snippet');
+                $datepublication = $request->get('datepublication');
+
+                //traitement image
+                    $descriimage =$request->get('descriimage');
+                    $nomiamge=Str::slug($descriimage).".".$request->file('image')->extension();
+                //upload image
+                    $request->file('image')->move(public_path('assets/img'),$nomiamge);
 
 
-            $contenu = [
-                'keywords' => $request->input('keywords'),
-                'titre' => $request->input('titre'),
-                'idcategorie' => $request->input('idcategorie'),
-                'resume' => $request->input('resume'),
-                'image' => $request->input('image'),
-                'snippet' => $request->input('snippet'),
-                'descriimage' => $request->input('descriimage'),
-                'datepublication' => $request->input('datepublication')
-            ];
+                $data=[
+                    'titre'=>$titre,
+                    'idcategorie'=>$idcategorie,
+                    'resume'=>$resume,
+                    'snippet'=>$snippet,
+                    'datepublication'=>$datepublication,
+                    'keywords'=>$keywords,
+                    'image'=>$nomiamge
+                    ];
+
+                $contenue=Contenue::create($data);
 
 
-            $idcontenue = $request->get('idcontenue');
-            $titrepara = $request->get('titrepara');
-            $imagepara = $request->get('imagepara');
-            $descriptione = $request->get('descriptione');
-
-            $paragraphe = [
-                'idcontenue' => $idcontenue,
-                'titrepara' => $titrepara,
-                'imagepara' => $imagepara,
-                'descriptione' => $descriptione
-            ];
 
 
-            return  $request->get('titrepara');
+
+            //insertion contenue
+                    $titrepara = $request->get('titrepara');
+                    $descriptione = $request->get('descriptione');
+
+            //traitement image
+                    $descritimage = $request->get('descritimage');
+                    $ext=$request->files->get('imagepara');
+//                    return $ext;
+
+
+
+                    for($i=0;$i<count($titrepara);$i++) {
+                $nomiamgepara=Str::slug($descritimage[$i]);
+                //upload image
+                $ext[$i]->move(public_path('assets/img'),$nomiamgepara);
+
+                $paragraphe = [
+                    'idcontenue' => $contenue->id,
+                    'titrepara' => $titrepara[$i],
+                    'imagepara' => $nomiamgepara,
+                    'descriptione' => $descriptione[$i]
+                ];
+                $para = Paragraphe::create($paragraphe);
+            }
+
+
+
+            return $contenue->id;
         }
 
 

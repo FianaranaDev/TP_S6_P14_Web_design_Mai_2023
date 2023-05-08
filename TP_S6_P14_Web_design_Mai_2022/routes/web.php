@@ -36,7 +36,7 @@ Route::get('/user', [App\Http\Controllers\UtilisateurController::class, 'create'
                     //ajout
         Route::get('admin/contenue',[App\Http\Controllers\ContenueController::class,'add']);
                     //insert
-        Route::get('admin/insert',[App\Http\Controllers\ContenueController::class,'insert']);
+        Route::post('admin/insert',[App\Http\Controllers\ContenueController::class,'insert']);
 
                     //delete
         Route::get('admin/delete/contenue/',[App\Http\Controllers\ContenueController::class,'delete']);

@@ -10,7 +10,7 @@ class Contenue extends Model
 {
     use HasFactory;
     protected $table="contenue";
-    public $incrementing=false;
+    public $incrementing=true;
     public $timestamps = false;
     public $fillable=[
         'id',

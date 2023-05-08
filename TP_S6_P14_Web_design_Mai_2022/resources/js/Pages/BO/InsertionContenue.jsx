@@ -1,7 +1,5 @@
 import {useState} from "react";
-import axios from "axios";
 import HeaderBO from "@/Layouts/BOL/HeaderBO";
-import InsertionC from "@/Pages/BO/InsertC";
 
 export default function InsertionContenue({listcategorie}) {
     const[paragraphes,setParagraphes]=useState(
@@ -26,8 +24,8 @@ export default function InsertionContenue({listcategorie}) {
                     </div>
                     <div className="col-md-6">
                         <div className="form-floating">
-                            <input type="password" className="form-control"
-                                   id="floatingPassword" placeholder="Password"></input>
+                            <input type="text" className="form-control"
+                                   name="descritimage[]" id="floatingPassword" ></input>
                             <label htmlFor="floatingPassword">descrit image</label>
                         </div>
                     </div>
@@ -73,7 +71,7 @@ export default function InsertionContenue({listcategorie}) {
                       <div className="col-md-6">
                           <div className="form-floating">
                               <input type="text" className="form-control"
-                                     id="floatingPassword" placeholder=""></input>
+                                     name="descritimage[]"  id="floatingPassword" placeholder=""></input>
                               <label htmlFor="floatingPassword">descrit image</label>
                           </div>
                       </div>
@@ -103,7 +101,7 @@ export default function InsertionContenue({listcategorie}) {
                 <HeaderBO/>
                 <main id="main" className="main">
 
-        <form method="GET" action="insert"   enctype="multipart/form-data">
+        <form method="post" action="insert"   enctype="multipart/form-data">
                     <section className="section">
                         <div className="row">
 
@@ -123,11 +121,17 @@ export default function InsertionContenue({listcategorie}) {
                                             </div>
                                             <div className="col-md-6">
                                                 <label htmlFor="inputPassword5" className="form-label">Categorie</label>
-                                                <select className="form-select" aria-label="Default select example">
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
+                                                <select className="form-select" name="idcategorie" aria-label="Default select example">
+
+                                                    {listcategorie.map((z) => (
+                                                        <>
+                                                    <option value={z.id}>{z.nomcategorie}</option>
+                                                        </>
+                                                    ))}
+
                                                 </select>
+
+
 
 
                                             </div>

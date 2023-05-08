@@ -32,6 +32,18 @@ CREATE TABLE Contenue (
                           image VARCHAR(100) NOT NULL
 );
 
+
+    CREATE TABLE tokens
+        (
+            token VARCHAR(50) NOT NULL ,
+            idusers INTEGER NOT NULL REFERENCES Utilisateur(id),
+            debut_validation DATE NOT NULL ,
+            fin_validation DATE NOT NULL ,
+            valid BOOLEAN DEFAULT true
+        );
+
+
+
 INSERT INTO Contenue(titre,image,descriimage,idcategorie,keywords,snippet,resume,datepublication)
 VALUES ('rush Hour','1.jpeg','otrany sary',1,'das fad fad ds','cette fikme dfa','Professionnel de lnformatique avec 5 ans dexpérience dans le développement web et la gestion de projets. Fortes compétences en résolution de problèmes et en travail déquipe. Passionné par les nouvelles technologies et constamment à la recherche de défis stimulants.','2022-01-5'),
        ('Jackie','1.jpeg','photo',1,'fsd ds fsd fd','fds','Professionnelle chevronnée en stratégie dentreprise et marketing avec 8 ans dexpérience. Solide expérience dans lanalyse de données pour prendre des décisions éclairées. Aptitude à diriger des équipes et à atteindre les objectifs fixés. Orientée résultats et axée sur linnovation.','2022-01-6'),
