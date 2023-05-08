@@ -9,12 +9,23 @@ class Utilisateur extends Model
 {
     use HasFactory;
 
-    protected $table="utilisateur";
-    public $incrementing=false;
-    protected $timstamps=false;
-    public $fillable=[
-        'title',
-        'snippet'
+    protected $table = "utilisateur";
+    public $incrementing = false;
+    public $timestamps = false;
+    protected $fillable = [
+        'nameutilisateur',
+        'mdputilisateur'
     ];
 
+    // Définition des setters
+    public function setNameutilisateurAttribute($value)
+    {
+        $this->attributes['nameutilisateur'] = strtolower($value);
+    }
+
+    public function setMdputilisateurAttribute($value)
+    {
+        $this->attributes['mdputilisateur'] = bcrypt($value);
+    }
 }
+

@@ -11,7 +11,7 @@ class Paragraphe extends Model
 
     protected $table="paragraphe";
     public $incrementing=false;
-    protected $timstamps=false;
+    public $timestamps = false;
     public $fillable=[
         'id',
         'idcontenue',

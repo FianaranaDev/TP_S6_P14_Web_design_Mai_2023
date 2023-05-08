@@ -10,12 +10,12 @@ class Contenue extends Model
     use HasFactory;
     protected $table="contenue";
     public $incrementing=false;
-    protected $timstamps=false;
+    public $timestamps = false;
     public $fillable=[
         'id',
         'keywords',
         'titre',
-        'idCategorie',
+        'idcategorie',
         'resume',
         'image',
         'snippet',

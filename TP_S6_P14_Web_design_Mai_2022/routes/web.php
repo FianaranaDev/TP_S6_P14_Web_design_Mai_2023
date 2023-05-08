@@ -17,16 +17,33 @@ use Inertia\Inertia;
 */
 //Route::get('/',[App\Http\Controllers\CategorieController::class,'getAllCategorie']);
 
-
-//page acceuil
-    Route::get('/',[App\Http\Controllers\ContenueController::class,'getAcceuil']);
-//page contenue par Categorie
-    Route::get('/category',[App\Http\Controllers\CategorieController::class,'getParCategorie']);
-//detail contenue
-    Route::get('/detail',[App\Http\Controllers\ContenueController::class,'getContenue']);
+//test insertion
 
 
 
+
+Route::get('/user', [App\Http\Controllers\UtilisateurController::class, 'create']);
+
+
+
+//Front office
+    //page acceuil
+        //Route::get('/',[App\Http\Controllers\ContenueController::class,'getAcceuil']);
+    //page contenue par Categorie
+        Route::get('/category',[App\Http\Controllers\CategorieController::class,'getParCategorie']);
+    //detail contenue
+        Route::get('/detail',[App\Http\Controllers\ContenueController::class,'getContenue']);
+
+//Back office
+    //insertion categorie
+        //Route::get('/',[App\Http\Controllers\CategorieController::class,'add']);
+        Route::get('/categorie/add',[App\Http\Controllers\CategorieController::class,'insert']);
+    //insertion contenue
+        //Route::get('/',[App\Http\Controllers\ContenueController::class,'add']);
+        Route::get('/contenue/add',[App\Http\Controllers\ContenueController::class,'insert']);
+    //insertion paragraphe
+        Route::get('/',[App\Http\Controllers\ParagrapheControlleur::class,'add']);
+        Route::get('/paragraphe/add',[App\Http\Controllers\ParagrapheControlleur::class,'insert']);
 
 
 require __DIR__.'/auth.php';

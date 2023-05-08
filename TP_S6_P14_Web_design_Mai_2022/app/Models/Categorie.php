@@ -11,12 +11,12 @@ class Categorie extends Model
 
     protected $table="categorie";
     public $incrementing=false;
-    protected $timstamps=false;
+    public $timestamps = false;
     public $fillable=[
         'id',
         'nomcategorie'
     ];
-    
+
     public function contenues(){
         return $this->hasMany(Contenue::class,'idcategorie');
     }

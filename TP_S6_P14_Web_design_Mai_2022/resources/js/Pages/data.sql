@@ -24,7 +24,7 @@ CREATE TABLE Contenue (
                           id SERIAL PRIMARY KEY NOT NULL,
                           keywords VARCHAR(100) NOT NULL,
                           titre VARCHAR(100) NOT NULL,
-                          idCategorie INTEGER NOT NULL REFERENCES Categorie(id),
+                          idcategorie INTEGER NOT NULL REFERENCES Categorie(id),
                           descriimage VARCHAR(50),
                           resume VARCHAR(1000),
                           snippet VARCHAR(700),
@@ -32,7 +32,7 @@ CREATE TABLE Contenue (
                           image VARCHAR(100) NOT NULL
 );
 
-INSERT INTO Contenue(titre,image,descriimage,idCategorie,keywords,snippet,resume,datepublication)
+INSERT INTO Contenue(titre,image,descriimage,idcategorie,keywords,snippet,resume,datepublication)
 VALUES ('rush Hour','1.jpeg','otrany sary',1,'das fad fad ds','cette fikme dfa','Professionnel de lnformatique avec 5 ans dexpérience dans le développement web et la gestion de projets. Fortes compétences en résolution de problèmes et en travail déquipe. Passionné par les nouvelles technologies et constamment à la recherche de défis stimulants.','2022-01-5'),
        ('Jackie','1.jpeg','photo',1,'fsd ds fsd fd','fds','Professionnelle chevronnée en stratégie dentreprise et marketing avec 8 ans dexpérience. Solide expérience dans lanalyse de données pour prendre des décisions éclairées. Aptitude à diriger des équipes et à atteindre les objectifs fixés. Orientée résultats et axée sur linnovation.','2022-01-6'),
        ('BOB','1.jpeg','bien le sary',1,'de bg ge','mlay',' Designer graphique créatif avec 3 ans dexpérience dans la conception graphique, le branding et lillustration. Maîtrise des outils de conception tels que Adobe Photoshop et Illustrator. Capacité à transformer des concepts en visuels attrayants et mémorables. Passionné par lart et lesthétique, toujours à laffût des dernières tendances du design.','2022-01-7');

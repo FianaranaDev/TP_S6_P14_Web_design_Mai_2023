@@ -39,5 +39,45 @@ class ContenueController extends Controller
                 'listcategorie'=>$listcategorie
             ]);
     }
+
+
+    //insertion
+        public function add()
+        {
+                //initialisation des donnees
+                    $listcategorie=Categorie::all();
+
+
+            return Inertia::render('BO/InsertionContenue',
+                [
+                    'listcategorie'=>$listcategorie
+                ]
+            );
+        }
+        public function insert(Request $request)
+        {
+            $contenu = Contenue::create([
+                'keywords' => $request->input('keywords'),
+                'titre' => $request->input('titre'),
+                'idcategorie' => $request->input('idcategorie'),
+                'resume' => $request->input('resume'),
+                'image' => $request->input('image'),
+                'snippet' => $request->input('snippet'),
+                'descriimage' => $request->input('descriimage'),
+                'datepublication' => $request->input('datepublication')
+            ]);
+
+            return $contenu;
+        }
+
+
+
+
+
+
+
+
+
+
 }
 

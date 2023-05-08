@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Categorie;
 use App\Models\Contenue;
+
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 class CategorieController extends Controller
@@ -35,6 +36,22 @@ class CategorieController extends Controller
                 'recent'=>$recent
             ]);
     }
+    function insert(Request $request){
+
+        $categorie = Categorie::create([
+            'nomcategorie' => $request->input('nomcategorie')
+        ]);
+
+        return $categorie;
+
+
+    }
+
+    public function add()
+    {
+        return Inertia::render('BO/InsertionCategory');
+    }
+
 
 
 }

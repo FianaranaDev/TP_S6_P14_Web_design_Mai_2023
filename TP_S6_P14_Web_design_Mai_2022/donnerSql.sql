@@ -32,12 +32,12 @@ INSERT INTO Categorie(nomCategorie) VALUES ('quoi'),('pourquoi'),('11eme');
 CREATE TABLE Contenue (
     id SERIAL PRIMARY KEY NOT NULL,
     titre VARCHAR(100) NOT NULL,
-    idCategorie INTEGER NOT NULL REFERENCES Categorie(id),
+    idcategorie INTEGER NOT NULL REFERENCES Categorie(id),
     snippet VARCHAR(700),
     datepublication date not null
 );
 
-INSERT INTO Contenue(titre,idCategorie,snippet,datepublication)
+INSERT INTO Contenue(titre,idcategorie,snippet,datepublication)
 VALUES ('rush Hour',1,'cette fikme dfa','2022-01-5'),
         ('Jackie',1,'fds','2022-01-6'),
          ('BOB',1,'je ne suis pas','2022-01-7');
