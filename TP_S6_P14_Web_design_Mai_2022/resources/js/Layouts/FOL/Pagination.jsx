@@ -17,13 +17,12 @@ export default function Pagination({contenue}){
       <>
                     <div class="text-start py-4">
                                              <div class="custom-pagination">
+                                {contenue.links.map((link) => {
+                                                                    if(link.url!=null){
+                                                       return <a href={link.url} className="active">{paginationdecode(link.label)}</a>
+                                }
 
-                                                 {contenue.links.map((link, i) => (
-                                                     <React.Fragment key={i}>
-                                                         <a href={link.url} className="active">{paginationdecode(link.label)}</a>
-                                                     </React.Fragment>
-                                                 ))}
-
+                                })}
 
 
                                                </div>

@@ -10,8 +10,14 @@ import Pagination from "@/Layouts/FOL/Pagination";
 export default function getParCategorie({categorie,listcategorie,recent}){
     return(
         <>
+            <Head>
 
-            <Head title={categorie.nomcategorie}/>
+                <title>{categorie.nomcategorie}</title>
+                <meta name="descritpion" content="List Contenue-ia-information"></meta>
+
+
+            </Head>
+         
 
             {/* navbar */}
             <NavBar categorie={listcategorie} />
