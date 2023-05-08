@@ -39,6 +39,39 @@ class ContenueController extends Controller
                 'listcategorie'=>$listcategorie
             ]);
     }
+    //upload image
+            public function test()
+            {
+                //initialisation des donnees
+                return Inertia::render('BO/TestImage');
+            }
+            public function upload(Request $request)
+            {
+                // Vérifier si le fichier a été envoyé
+                if ($request->hasFile('image')) {
+                    // Obtenir le fichier envoyé
+                    $image = $request->file('image');
+                    // Générer un nom de fichier unique
+                    $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+                    // Déplacer le fichier vers le dossier de destination
+                    $image->move(public_path('uploads'), $filename);
+                    // Sauvegarder le nom de fichier dans la base de données
+                    $data = ['filename' => $filename];
+                    Image::create($data);
+                    // Rediriger l'utilisateur vers la page de succès
+                    return redirect('/success');
+                } else {
+                    // Rediriger l'utilisateur vers la page d'erreur
+                    return redirect('/error');
+                }
+            }
+
+
+
+
+
+
+
 
 
     //insertion

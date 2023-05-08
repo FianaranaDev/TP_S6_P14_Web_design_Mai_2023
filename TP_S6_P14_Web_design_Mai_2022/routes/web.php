@@ -28,7 +28,7 @@ Route::get('/user', [App\Http\Controllers\UtilisateurController::class, 'create'
 
 //Front office
     //page acceuil
-        //Route::get('/',[App\Http\Controllers\ContenueController::class,'getAcceuil']);
+        Route::get('/',[App\Http\Controllers\ContenueController::class,'getAcceuil']);
     //page contenue par Categorie
         Route::get('/category',[App\Http\Controllers\CategorieController::class,'getParCategorie']);
     //detail contenue
@@ -39,10 +39,14 @@ Route::get('/user', [App\Http\Controllers\UtilisateurController::class, 'create'
         //Route::get('/',[App\Http\Controllers\CategorieController::class,'add']);
         Route::get('/categorie/add',[App\Http\Controllers\CategorieController::class,'insert']);
     //insertion contenue
-        //Route::get('/',[App\Http\Controllers\ContenueController::class,'add']);
+        //Route::get('/',[App\Http\Controllers\ContenueController::class,'test']);
         Route::get('/contenue/add',[App\Http\Controllers\ContenueController::class,'insert']);
+
+        Route::get('/upload',[App\Http\Controllers\ContenueController::class,'upload']);
+
+
     //insertion paragraphe
-        Route::get('/',[App\Http\Controllers\ParagrapheControlleur::class,'add']);
+        //Route::get('/',[App\Http\Controllers\ParagrapheControlleur::class,'add']);
         Route::get('/paragraphe/add',[App\Http\Controllers\ParagrapheControlleur::class,'insert']);
 
 
