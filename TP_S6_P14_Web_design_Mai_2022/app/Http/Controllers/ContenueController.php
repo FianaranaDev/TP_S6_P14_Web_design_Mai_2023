@@ -43,6 +43,8 @@ class ContenueController extends Controller
     }
 
 
+
+
 //BO
         //list
             public function listDU(){
@@ -78,7 +80,15 @@ class ContenueController extends Controller
 
 
 
-
+    public function update(Request $request)
+    {
+        $contenues=Contenue::find($request->get("id"));
+        return Inertia::render('BO/ContenueUpdate',
+            [
+                'contenues'=>$contenues
+            ]
+        );
+    }
 
 
 

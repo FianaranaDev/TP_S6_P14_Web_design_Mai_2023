@@ -2,16 +2,6 @@
 DROP DATABASE ia;
 CREATE DATABASE ia;
 \c ia;
--- CREATE SEQUENCE Admin_seq;
--- CREATE TABLE Admin(
---                       idAdmin VARCHAR(100) NOT NULL PRIMARY KEY DEFAULT ADM'||nextval('Admin_seq'),
---                       nameAdmin VARCHAR(100) NOT NULL,
---                       mdpAdmin VARCHAR(100) NOT NULL
--- );
--- CREATE VIEW v_Admin as SELECT  * FROM Admin;
-
-
--- CREATE SEQUENCE Utilisateur_seq;
 
 CREATE TABLE Utilisateur (
                              id SERIAL PRIMARY KEY NOT NULL,
