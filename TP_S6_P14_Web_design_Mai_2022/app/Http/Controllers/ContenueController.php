@@ -67,7 +67,7 @@ class ContenueController extends Controller
         public function delete($id){
             $id=explode('-',$id)[0];
             Paragraphe::where('idcontenue',$id)->delete();
-            Contenue::find($request->get("id"))->delete();
+            Contenue::find($id)->delete();
 
             //initialisation des donnees
                 $contenue=Contenue::paginate(3);

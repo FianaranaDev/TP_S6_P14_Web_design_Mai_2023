@@ -31,13 +31,13 @@ export default function ListContenue({contenue}) {
                                 <img src={"/assets/img/"+c.image} className="card-img-top" alt={c.descriimage}></img>
                                     <div className="card-img-overlay">
                                         <h1 className="card-title">{c.titre}</h1>
-                                        <p className="card-text">{c.descriimage} </p>
+                                        <p className="card-text">{c.image} </p>
                                     </div>
                             </div>
 
                             <div className="card">
                                 <div className="card-body">
-                                    <h5 className="card-title">Categorie : quoi</h5>
+                                    <h5 className="card-title">   </h5>
                                     <h6 className="card-subtitle mb-2 text-muted">{c.snippet}</h6>
                                     <p className="card-text"> {c.resume}</p>
                                     <p className="card-text"><a href={"/admin/delete/contenue/"+c.id+"-"+"contenue"} className="btn btn-alert">Supprimer</a>
