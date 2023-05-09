@@ -13,7 +13,7 @@ export default function ContenueUpdate({contenues,listcategorie,paragraphes}) {
             <HeaderBO/>
             <main id="main" className="main">
 
-                <form method="post" action="#"   enctype="multipart/form-data">
+                <form method="post" action={"/admin/update/"+contenues.id+"-"+"contenue"}   enctype="multipart/form-data">
                     <section className="section">
                         <div className="row">
 
@@ -29,7 +29,7 @@ export default function ContenueUpdate({contenues,listcategorie,paragraphes}) {
                                         <div className="row g-3" >
                                             <div className="col-md-6">
                                                 <label htmlFor="inputEmail5" className="form-label">Titre</label>
-                                                <input type="text" value={contenues.titre} name="titre" className="form-control" id="inputEmail5"></input>
+                                                <input type="text" defaultValue={contenues.titre} name="titre" className="form-control" id="inputEmail5"></input>
                                             </div>
                                             <div className="col-md-6">
                                                 <label htmlFor="inputPassword5" className="form-label">Categorie</label>
@@ -40,10 +40,10 @@ export default function ContenueUpdate({contenues,listcategorie,paragraphes}) {
 
                                                         if(contenues.idcategorie!==z.id){
 
-                                                        <option value={z.id}>{z.nomcategorie}</option>
+                                                        <option defaultValue={z.id}>{z.nomcategorie}</option>
 
                                                         }else{
-                                                            <option value={z.id} selected>{z.nomcategorie}</option>
+                                                            <option defaultValue={z.id} selected>{z.nomcategorie}</option>
 
                                                         }
                                             </>
@@ -58,23 +58,23 @@ export default function ContenueUpdate({contenues,listcategorie,paragraphes}) {
                                             <div className="col-md-12">
 
                                                 <label htmlFor="inputName5" className="form-label">Resume</label>
-                                                <input type="text" value={contenues.resume} name="resume" className="form-control" id="inputName5"></input>
+                                                <input type="text" defaultValue={contenues.resume} name="resume" className="form-control" id="inputName5"></input>
                                             </div>
 
                                             <div className="col-md-12">
 
                                                 <label htmlFor="inputName5" className="form-label">Snippet</label>
-                                                <input type="text" value={contenues.snippet} name="snippet" className="form-control" id="inputName5"></input>
+                                                <input type="text" defaultValue={contenues.snippet} name="snippet" className="form-control" id="inputName5"></input>
                                             </div>
 
                                             <div className="col-md-6">
                                                 <label htmlFor="inputEmail5" className="form-label">Mots cles</label>
-                                                <input type="text" value={contenues.keywords} name="keywords" className="form-control" id="inputEmail5"></input>
+                                                <input type="text" defaultValue={contenues.keywords} name="keywords" className="form-control" id="inputEmail5"></input>
                                             </div>
                                             <div className="col-md-6">
                                                 <label htmlFor="inputPassword5" className="form-label">Date de
                                                     publication</label>
-                                                <input type="date" value={contenues.datepublication} name="datepublication" className="form-control"></input>
+                                                <input type="date" defaultValue={contenues.datepublication} name="datepublication" className="form-control"></input>
 
                                             </div>
 
@@ -85,7 +85,7 @@ export default function ContenueUpdate({contenues,listcategorie,paragraphes}) {
                                             <div className="col-md-6">
                                                 <label htmlFor="inputCity" className="form-label">description
                                                     l'image</label>
-                                                <input type="text" name="descriimage" value={contenues.descriimage} className="form-control" id="inputCity"></input>
+                                                <input type="text" name="descriimage" defaultValue={contenues.descriimage} className="form-control" id="inputCity"></input>
                                             </div>
 
 
@@ -108,7 +108,7 @@ export default function ContenueUpdate({contenues,listcategorie,paragraphes}) {
                                                 <div className="row g-3">
                                                     <div className="col-md-12">
                                                         <div className="form-floating">
-                                                            <input type="text" value={p.titrepara} name="titrepara[]" className="form-control" id="floatingName"
+                                                            <input type="text" defaultValue={p.titrepara} name="titrepara[]" className="form-control" id="floatingName"
                                                                    placeholder="Your Name"></input>
                                                             <label htmlFor="floatingName">titre</label>
                                                         </div>
@@ -123,13 +123,13 @@ export default function ContenueUpdate({contenues,listcategorie,paragraphes}) {
                                                     <div className="col-md-6">
                                                         <div className="form-floating">
                                                             <input type="text" className="form-control"
-                                                                   name="descritimage[]" value={p.descritimage} id="floatingPassword" ></input>
+                                                                   name="descritimage[]" defaultValue={p.descritimage} id="floatingPassword" ></input>
                                                             <label htmlFor="floatingPassword">descrit image</label>
                                                         </div>
                                                     </div>
                                                     <div className="col-12">
                                                         <div className="form-floating">
-                                                    <textarea name="descriptione[]" value={p.descriptione} className="form-control" placeholder="Address"
+                                                    <textarea name="descriptione[]" defaultValue={p.descriptione} className="form-control" placeholder="Address"
                                                               id="floatingTextarea" ></textarea>
                                                             <label htmlFor="floatingTextarea">paragrapne</label>
                                                         </div>

@@ -1,10 +1,16 @@
 import HeaderBO from "@/Layouts/BOL/HeaderBO";
+import {Head} from "@inertiajs/react";
 
 export default function InsertionCategory() {
 
 
     return(
         <>
+
+            <Head>
+                <title>Ajout Categorie </title>
+
+            </Head>
         <HeaderBO/>
 
             <main id="main" className="main">

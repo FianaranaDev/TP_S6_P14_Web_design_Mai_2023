@@ -206,6 +206,77 @@ class ContenueController extends Controller
             );
         }
 
+    public function setupdate(Request $request,$id){
+        $id=explode('-',$id)[0];
+
+
+        //insertion contenue
+        $keywords = $request->get('keywords');
+        $titre = $request->get('titre');
+        $idcategorie= $request->get('idcategorie');
+        $resume = $request->get('resume');
+        $snippet = $request->get('snippet');
+        $datepublication = $request->get('datepublication');
+
+        //traitement image
+        $descriimage =$request->get('descriimage');
+        $nomiamge=Str::slug($descriimage).".".$request->file('image')->extension();
+        //upload image
+        $request->file('image')->move(public_path('assets/img'),$nomiamge);
+        $data=[
+            'titre'=>$titre,
+            'idcategorie'=>$idcategorie,
+            'resume'=>$resume,
+            'snippet'=>$snippet,
+            'datepublication'=>$datepublication,
+            'keywords'=>$keywords,
+            'image'=>$nomiamge
+        ];
+        $contenues=Contenue::find($id)->update($data);
+        Paragraphe::where('idcontenue',$id)->delete();
+
+
+//
+
+
+        //insertion contenue
+        $titrepara = $request->get('titrepara');
+        $descriptione = $request->get('descriptione');
+
+        //traitement image
+        $descritimage = $request->get('descritimage');
+        $ext=$request->files->get('imagepara');
+//                    return $ext;
+
+
+
+        for($i=0;$i<count($titrepara);$i++) {
+            $nomiamgepara=Str::slug($descritimage[$i]);
+            //upload image
+            $ext[$i]->move(public_path('assets/img'),$nomiamgepara);
+
+            $paragraphe = [
+                'idcontenue' => $id,
+                'titrepara' => $titrepara[$i],
+                'imagepara' => $nomiamgepara,
+                'descriptione' => $descriptione[$i]
+            ];
+            $para = Paragraphe::create($paragraphe);
+        }
+
+
+
+        //initialisation des donnees
+        $contenue=Contenue::paginate(3);
+
+        //disp
+        return Inertia::render('BO/ListContenue',
+            [
+                'contenue'=>$contenue
+            ]
+        );
+    }
+
 
 
 

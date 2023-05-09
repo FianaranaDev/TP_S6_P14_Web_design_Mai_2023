@@ -50,8 +50,12 @@ use Inertia\Inertia;
                 //modifier
         Route::get('/admin/modifier/contenue/{id}',[App\Http\Controllers\ContenueController::class,'update']);
 
+                //setupdate
+Route::post('admin/update/{id}',[App\Http\Controllers\ContenueController::class,'setupdate']);
 
-Route::get('/admin/supprimer/paragraphe/{id}',[App\Http\Controllers\ContenueController::class,'deletepara']);
+
+        //supprimer paragraphe
+            Route::get('/admin/supprimer/paragraphe/{id}',[App\Http\Controllers\ContenueController::class,'deletepara']);
 
 
 
