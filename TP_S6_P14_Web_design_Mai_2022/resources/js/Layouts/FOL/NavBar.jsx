@@ -42,7 +42,7 @@ export default function NavBar({categorie}) {
                             {categorie.map((z) => (
                                 <>
 
-                                <li><a href={"/detail/"+z.id+"-"+"categorie"} >{z.nomcategorie}</a></li>
+                                <li><a href={"/category/"+z.id+"-"+"categorie"} >{z.nomcategorie}</a></li>
 
 
                                 </>

@@ -24,7 +24,7 @@ export default function Footer({categorie,recent}) {
 
                         {categorie.map((z) => (
                             <>
-                                <li><a href={"/detail/"+z.id+"-"+"categorie"}  ><i className="bi bi-chevron-right"></i> {z.nomcategorie}</a></li>
+                                <li><a href={"/category/"+z.id+"-"+"categorie"}  ><i className="bi bi-chevron-right"></i> {z.nomcategorie}</a></li>
                             </>
                         ))}
 
