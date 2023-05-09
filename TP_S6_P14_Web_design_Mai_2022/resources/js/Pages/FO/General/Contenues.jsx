@@ -7,7 +7,7 @@ export default function Contenues({contenue}){
                 <div class="d-md-flex post-entry-2 half">
                     <a href="#" class="me-4 thumbnail">
 
-                        <img src={"/assets/img/"+c.image} alt="" class="img-fluid"></img>
+                        <img src={"/assets/img/"+c.image} width="400"  height="200" alt="" class="img-fluid"></img>
                     </a>
 
                     <div>

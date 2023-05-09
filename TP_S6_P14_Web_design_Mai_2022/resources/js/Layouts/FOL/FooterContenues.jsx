@@ -11,7 +11,7 @@ export default function FooterContenues({recent}){
 
                     {recent.map((c) => (
                     <li>
-                        <a href="single-post.html" className="d-flex align-items-center">
+                        <a href="#" className="d-flex align-items-center">
                             <img src={"/assets/img/"+c.image} alt="" className="img-fluid me-3"></img>
                             <div>
                                 <div className="post-meta d-block"><span className="date">{c.snippet}</span> <span
