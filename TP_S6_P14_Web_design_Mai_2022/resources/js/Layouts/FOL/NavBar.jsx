@@ -56,7 +56,7 @@ export default function NavBar({categorie}) {
 
                         <div class="position-relative">
 
-                  
+
 
 
                         </div>
