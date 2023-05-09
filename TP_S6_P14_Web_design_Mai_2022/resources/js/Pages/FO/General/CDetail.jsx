@@ -28,7 +28,7 @@ export default function CDetail({detail}){
                                 </a>
                                 <div class="pe-md-5 mt-4 mt-md-0">
                                   <div class="post-meta mt-4"></div>
-                                  <h2 class="mb-4 display-4">{paragraphes[i].descriptione}</h2>
+                                  <h2 class="mb-4 display-4">{paragraphes[i].titrepara}</h2>
                                   <p>{paragraphes[i].descriptione}</p>
                                 </div>
                               </div> );

@@ -8,7 +8,7 @@ export default function SideBarInf({recent}){
                         {recent.map((c) => (
                             <div className="post-entry-1 border-bottom">
                                 <div className="post-meta"><span className="date"><strong>{c.snippet}</strong></span>  <span><strong>{c.datepublication}</strong></span></div>
-                           
+
                             <h2 className="mb-2"><a href={"/detail?id="+c.id}>{c.titre}</a></h2>
                         </div>
                         ))}
