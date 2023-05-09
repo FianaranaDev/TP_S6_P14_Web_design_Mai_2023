@@ -31,13 +31,13 @@ use Inertia\Inertia;
 
 //Back office
     //List contenue  Delete Update
-        Route::post('/admin/login',[App\Http\Controllers\ContenueController::class,'listDU']);
+        //Route::post('/admin/login',[App\Http\Controllers\ContenueController::class,'listDU']);
 
-        Route::get('/admin/con',[App\Http\Controllers\ContenueController::class,'listDU']);
+        Route::get('/admin/con',[App\Http\Controllers\ContenueController::class,'listDU'])->middleware('auth');
                     //ajout
-        Route::get('admin/contenue',[App\Http\Controllers\ContenueController::class,'add']);
+        Route::get('admin/contenue',[App\Http\Controllers\ContenueController::class,'add'])->middleware('auth');
                     //insert
-        Route::post('admin/insert',[App\Http\Controllers\ContenueController::class,'insert']);
+        Route::post('admin/insert',[App\Http\Controllers\ContenueController::class,'insert'])->middleware('auth');
 
 
 
