@@ -12,7 +12,7 @@ class ContenueController extends Controller
 {
     function getAcceuil(){
         //initialisation donnee
-            $contenue=Contenue::paginate(1);
+            $contenue=Contenue::paginate(3);
             $listcategorie=Categorie::all();
             //date recent ordre decroisante en evitant order by
                 $recent = Contenue::orderBy('datepublication', 'desc')->get();
