@@ -56,9 +56,7 @@ export default function NavBar({categorie}) {
 
                         <div class="position-relative">
 
-                            <p><input type="text" placeholder="Search" className="form-control"></input></p>
-                            <input type="button" value="valider"></input>
-
+                  
 
 
                         </div>
