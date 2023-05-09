@@ -20,7 +20,7 @@ export default function InsertionCategory() {
                                 <div className="card-body">
                                     <h5 className="card-title">Ajout Categorie</h5>
 
-                                    <form className="row g-3" action="/admin/categorie/add" method="GET">
+                                    <form className="row g-3" action="/admin/categorie/add" method="POST">
 
                                         <div className="col-md-12">
 

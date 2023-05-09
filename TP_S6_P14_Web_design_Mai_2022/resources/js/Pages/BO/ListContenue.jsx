@@ -40,8 +40,10 @@ export default function ListContenue({contenue}) {
                                     <h5 className="card-title">Categorie : quoi</h5>
                                     <h6 className="card-subtitle mb-2 text-muted">{c.snippet}</h6>
                                     <p className="card-text"> {c.resume}</p>
-                                    <p className="card-text"><a href={"/admin/delete/contenue?id="+c.id} className="btn btn-alert">Supprimer</a>
-                                        <a href={"/admin/modifier/contenue?id="+c.id}  className="btn btn-primary">Modifier</a>   </p>
+                                    <p className="card-text"><a href={"/admin/delete/contenue/"+c.id+"-"+"contenue"} className="btn btn-alert">Supprimer</a>
+                                        <a href={"/admin/modifier/contenue/"+c.id+"-"+"contenue"}  className="btn btn-primary">Modifier</a>   </p>
+
+
                                 </div>
                             </div>
                         </div>

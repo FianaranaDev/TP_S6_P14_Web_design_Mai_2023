@@ -45,7 +45,7 @@ class CategorieController extends Controller
             'nomcategorie' => $request->input('nomcategorie')
         ]);
 
-        return $categorie;
+        return Inertia::render('BO/InsertionCategory');
 
 
     }

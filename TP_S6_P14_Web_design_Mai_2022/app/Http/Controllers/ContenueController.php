@@ -64,9 +64,9 @@ class ContenueController extends Controller
             }
 
           //delete
-        public function delete(Request $request){
-
-            Paragraphe::where('idcontenue',$request->get("id"))->delete();
+        public function delete($id){
+            $id=explode('-',$id)[0];
+            Paragraphe::where('idcontenue',$id)->delete();
             Contenue::find($request->get("id"))->delete();
 
             //initialisation des donnees
@@ -83,9 +83,9 @@ class ContenueController extends Controller
 
 
 
-    public function update(Request $request)
-    {
-        $contenues=Contenue::find($request->get("id"));
+    public function update($id){
+        $id=explode('-',$id)[0];
+        $contenues=Contenue::find($id);
         return Inertia::render('BO/ContenueUpdate',
             [
                 'contenues'=>$contenues
@@ -168,7 +168,16 @@ class ContenueController extends Controller
 
 
 
-            return $contenue->id;
+            //initialisation des donnees
+            $contenue=Contenue::paginate(3);
+
+
+            //disp
+            return Inertia::render('BO/ListContenue',
+                [
+                    'contenue'=>$contenue
+                ]
+            );
         }
 
 

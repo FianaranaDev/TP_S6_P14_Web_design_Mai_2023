@@ -14,10 +14,7 @@ export default function getContenue({contenue,listcategorie,recent}){
             <Head>
                 <title>List Aleatoire</title>
                 <meta name="description" content="List Contenue-ia-information"/>
-
             </Head>
-
-
 
             {/* navbar */}
                 <NavBar categorie={listcategorie} />

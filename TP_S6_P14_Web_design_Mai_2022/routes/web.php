@@ -39,11 +39,19 @@ use Inertia\Inertia;
                     //insert
         Route::post('admin/insert',[App\Http\Controllers\ContenueController::class,'insert']);
 
+
+
+
+
+
                     //delete
-        Route::get('admin/delete/contenue/',[App\Http\Controllers\ContenueController::class,'delete']);
+        Route::get('admin/delete/contenue/{id}',[App\Http\Controllers\ContenueController::class,'delete']);
 
                 //modifier
-        Route::get('/admin/modifier/contenue',[App\Http\Controllers\ContenueController::class,'update']);
+        Route::get('/admin/modifier/contenue/{id}',[App\Http\Controllers\ContenueController::class,'update']);
+
+
+
 
 
 //update
@@ -52,7 +60,7 @@ use Inertia\Inertia;
         //ajout
             Route::get('/admin/categorie',[App\Http\Controllers\CategorieController::class,'add']);
         //insert
-            Route::get('/admin/categorie/add',[App\Http\Controllers\CategorieController::class,'insert']);
+            Route::post('/admin/categorie/add',[App\Http\Controllers\CategorieController::class,'insert']);
         //
 
 
