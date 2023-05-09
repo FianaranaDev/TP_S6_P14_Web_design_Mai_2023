@@ -40,10 +40,10 @@ export default function ContenueUpdate({contenues,listcategorie,paragraphes}) {
 
                                                         if(contenues.idcategorie!==z.id){
 
-                                                        <option defaultValue={z.id}>{z.nomcategorie}</option>
+                                                        <option value={z.id}>{z.nomcategorie}</option>
 
                                                         }else{
-                                                            <option defaultValue={z.id} selected>{z.nomcategorie}</option>
+                                                            <option value={z.id} selected>{z.nomcategorie}</option>
 
                                                         }
                                             </>
