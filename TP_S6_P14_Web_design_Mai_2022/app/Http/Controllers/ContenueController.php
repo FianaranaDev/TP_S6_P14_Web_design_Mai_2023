@@ -80,6 +80,27 @@ class ContenueController extends Controller
         }
 
 
+    public function deletepara($id){
+        $id=explode('-',$id)[0];
+        Paragraphe::where('id',$id)->delete();
+
+
+
+
+        $contenues=Contenue::find($id);
+        $listcategorie=Categorie::all();
+        $paragraphes=Paragraphe::where('idcontenue','=',$id)->get();
+
+        return Inertia::render('BO/ContenueUpdate',
+            [
+                'contenues'=>$contenues,
+                'listcategorie'=>$listcategorie,
+                'paragraphes'=>$paragraphes
+            ]
+        );
+    }
+
+
 
 
 

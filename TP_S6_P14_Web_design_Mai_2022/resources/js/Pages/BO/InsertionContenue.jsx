@@ -1,7 +1,11 @@
 import {useState} from "react";
 import HeaderBO from "@/Layouts/BOL/HeaderBO";
+import {Head} from "@inertiajs/react";
 
 export default function InsertionContenue({listcategorie}) {
+
+
+
     const[paragraphes,setParagraphes]=useState(
         <div className="card">
             <div className="card-body">
@@ -45,6 +49,9 @@ export default function InsertionContenue({listcategorie}) {
         </div>
     );
     const addPara=(event)=>{
+
+
+
         event.preventDefault();
       setParagraphes(<>
           {paragraphes}
@@ -96,6 +103,10 @@ export default function InsertionContenue({listcategorie}) {
 
     return (
             <>
+                <Head>
+                    <title>Paragraphe</title>
+
+                </Head>
 
 
                 <HeaderBO/>

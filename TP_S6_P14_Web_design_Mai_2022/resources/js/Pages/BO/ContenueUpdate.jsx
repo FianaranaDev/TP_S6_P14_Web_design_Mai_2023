@@ -1,15 +1,19 @@
 import {useState} from "react";
 import HeaderBO from "@/Layouts/BOL/HeaderBO";
+import {Head} from "@inertiajs/react";
 
 export default function ContenueUpdate({contenues,listcategorie,paragraphes}) {
     return (
         <>
 
+        <Head>
+            <title>Ajout Contenue </title>
 
+        </Head>
             <HeaderBO/>
             <main id="main" className="main">
 
-                <form method="post" action="insert"   enctype="multipart/form-data">
+                <form method="post" action="#"   enctype="multipart/form-data">
                     <section className="section">
                         <div className="row">
 
@@ -99,7 +103,7 @@ export default function ContenueUpdate({contenues,listcategorie,paragraphes}) {
                                     <>
                                         <div className="card">
                                             <div className="card-body">
-                                                <h2 className="card-title">p</h2>
+                                                <a href={"/admin/supprimer/paragraphe/"+p.id+"-"+"paragraphe"} className="btn btn-danger"  >Supprimer Paragraphe</a>
 
                                                 <div className="row g-3">
                                                     <div className="col-md-12">

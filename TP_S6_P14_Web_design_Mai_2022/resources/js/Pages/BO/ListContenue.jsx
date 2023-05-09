@@ -1,5 +1,6 @@
 import HeaderBO from "@/Layouts/BOL/HeaderBO";
 import React from "react";
+import {Head} from "@inertiajs/react";
 
 export default function ListContenue({contenue}) {
 
@@ -17,6 +18,11 @@ export default function ListContenue({contenue}) {
 
     return(
         <>
+
+            <Head>
+                <title>List des Contenues</title>
+
+            </Head>
             <HeaderBO/>
             <body>
             <main id="main" className="main">
