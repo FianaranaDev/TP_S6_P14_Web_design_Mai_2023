@@ -27,9 +27,12 @@ class ContenueController extends Controller
             ]);
     }
 
-    function getContenue(Request $request){
+    function getContenue($id){
+        $id=explode('-',$id)[0];
+
+
+        $detail=Contenue::where('id','=',$id)->first();
         //initialisation donnee
-            $detail=Contenue::find($request->get("id"));
             $detail->paragraphes=$detail->paragraphes()->paginate(3);
             $listcategorie=Categorie::all();
 

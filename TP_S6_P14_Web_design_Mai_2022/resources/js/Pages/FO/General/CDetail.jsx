@@ -12,7 +12,7 @@ export default function CDetail({detail}){
                 elementsJSX.push(
                     <div className="d-md-flex post-entry-2 half">
                         <a href="#" className="me-4 thumbnail">
-                            <img src={"assets/img/"+paragraphes[i].imagepara} alt="" className="img-fluid" />
+                            <img src={"/assets/img/"+paragraphes[i].imagepara} alt="" className="img-fluid" />
                         </a>
                         <div className="ps-md-5 mt-4 mt-md-0">
                             <div className="post-meta mt-4"></div>
@@ -24,7 +24,7 @@ export default function CDetail({detail}){
             } else {
                 elementsJSX.push( <div class="d-md-flex post-entry-2 half mt-5">
                                 <a href="#" class="me-4 thumbnail order-2">
-                                  <img src={"assets/img/"+paragraphes[i].imagepara} alt="" class="img-fluid"/>
+                                  <img src={"/assets/img/"+paragraphes[i].imagepara} alt="" class="img-fluid"/>
                                 </a>
                                 <div class="pe-md-5 mt-4 mt-md-0">
                                   <div class="post-meta mt-4"></div>

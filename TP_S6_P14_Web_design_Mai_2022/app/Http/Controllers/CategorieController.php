@@ -17,10 +17,13 @@ class CategorieController extends Controller
                 'categorie'=>$categorie
             ]);
     }
-    function getParCategorie(Request $request){
+    function getParCategorie($id){
+
+
+        $id=explode('-',$id)[0];
         //initialisation pagination 2
             //categorie et contnue du premier page
-                $categorie=Categorie::where('id','=',$request->get("id"))->first();
+                $categorie=Categorie::where('id','=',$id)->first();
                 $categorie->contenues=$categorie->contenues()->paginate(2);
                 $listcategorie=Categorie::all();
                 $recent=Contenue::all();

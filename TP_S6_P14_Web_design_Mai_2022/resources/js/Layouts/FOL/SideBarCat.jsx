@@ -6,7 +6,7 @@ export default function SideBarCat({categorie}){
                 <ul className="aside-links list-unstyled">
                     {categorie.map((z) => (
                         <>
-                  <li><a href={"/category?id="+z.id}><i className="bi bi-chevron-right"></i>{z.nomcategorie}</a></li>
+                  <li><a href={"/detail/"+z.id+"-"+"categorie"} ><i className="bi bi-chevron-right"></i>{z.nomcategorie}</a></li>
                         </>
                     ))}
               </ul>

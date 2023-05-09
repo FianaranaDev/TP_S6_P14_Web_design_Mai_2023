@@ -24,7 +24,7 @@ Route::get('/user', [App\Http\Controllers\UtilisateurController::class, 'create'
     //page contenue par Categorie
         Route::get('/category',[App\Http\Controllers\CategorieController::class,'getParCategorie']);
     //detail contenue
-        Route::get('/detail',[App\Http\Controllers\ContenueController::class,'getContenue']);
+        Route::get('/detail/{id}',[App\Http\Controllers\ContenueController::class,'getContenue']);
 
 
 
@@ -45,7 +45,6 @@ Route::get('/user', [App\Http\Controllers\UtilisateurController::class, 'create'
 
                 //modifier
         Route::get('/admin/modifier/contenue',[App\Http\Controllers\ContenueController::class,'update']);
-
 
 
 //update

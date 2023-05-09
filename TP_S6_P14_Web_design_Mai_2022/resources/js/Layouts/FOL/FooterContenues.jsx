@@ -16,7 +16,8 @@ export default function FooterContenues({recent}){
                             <div>
                                 <div className="post-meta d-block"><span className="date">{c.snippet}</span> <span
                                     className="mx-1">;</span> <span>{c.datepublication}</span></div>
-                                <span><a href={"/detail?id="+c.id} >{c.titre}</a></span>
+                                <span><a href={"/detail/"+c.id+"-"+"contenue"} >{c.titre}</a></span>
+
                             </div>
                         </a>
                     </li>
