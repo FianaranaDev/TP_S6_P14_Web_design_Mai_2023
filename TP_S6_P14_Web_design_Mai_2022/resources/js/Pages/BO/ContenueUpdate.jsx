@@ -1,99 +1,7 @@
 import {useState} from "react";
 import HeaderBO from "@/Layouts/BOL/HeaderBO";
 
-export default function ContenueUpdate({contenues}) {
-    const[paragraphes,setParagraphes]=useState(
-        <div className="card">
-            <div className="card-body">
-                <h2 className="card-title">Paragraphe</h2>
-
-                <div className="row g-3">
-                    <div className="col-md-12">
-                        <div className="form-floating">
-                            <input type="text" name="titrepara[]" className="form-control" id="floatingName"
-                                   placeholder="Your Name"></input>
-                            <label htmlFor="floatingName">titre</label>
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="form-floating">
-
-                            <input type="file" name="imagepara[]" className="form-control" id="floatingEmail"
-                                   placeholder="Your Email"></input>
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="form-floating">
-                            <input type="text" className="form-control"
-                                   name="descritimage[]" id="floatingPassword" ></input>
-                            <label htmlFor="floatingPassword">descrit image</label>
-                        </div>
-                    </div>
-                    <div className="col-12">
-                        <div className="form-floating">
-                                                    <textarea name="descriptione[]" className="form-control" placeholder="Address"
-                                                              id="floatingTextarea" ></textarea>
-                            <label htmlFor="floatingTextarea">paragrapne</label>
-                        </div>
-                    </div>
-
-
-
-                </div>
-
-            </div>
-        </div>
-    );
-    const addPara=(event)=>{
-        event.preventDefault();
-        setParagraphes(<>
-            {paragraphes}
-
-            <div className="card">
-                <div className="card-body">
-                    <h2 className="card-title">Paragraphe</h2>
-
-                    <div className="row g-3">
-                        <div className="col-md-12">
-                            <div className="form-floating">
-                                <input type="text" name="titrepara[]" className="form-control" id="floatingName"
-                                       placeholder="Your Name"></input>
-                                <label htmlFor="floatingName">titre</label>
-                            </div>
-                        </div>
-                        <div className="col-md-6">
-                            <div className="form-floating">
-
-                                <input type="file" name="imagepara[]" className="form-control" id="floatingEmail"
-                                       placeholder="Your Email"></input>
-                            </div>
-                        </div>
-                        <div className="col-md-6">
-                            <div className="form-floating">
-                                <input type="text" className="form-control"
-                                       name="descritimage[]"  id="floatingPassword" placeholder=""></input>
-                                <label htmlFor="floatingPassword">descrit image</label>
-                            </div>
-                        </div>
-                        <div className="col-12">
-                            <div className="form-floating">
-                                                    <textarea name="descriptione[]" className="form-control" placeholder="Address"
-                                                              id="floatingTextarea" ></textarea>
-                                <label htmlFor="floatingTextarea">paragrapne</label>
-                            </div>
-                        </div>
-
-
-
-                    </div>
-
-                </div>
-            </div>
-        </>)
-    };
-
-
-
+export default function ContenueUpdate({contenues,listcategorie,paragraphes}) {
     return (
         <>
 
@@ -121,9 +29,21 @@ export default function ContenueUpdate({contenues}) {
                                             </div>
                                             <div className="col-md-6">
                                                 <label htmlFor="inputPassword5" className="form-label">Categorie</label>
-                                                <select className="form-select" value={contenues.idcategorie} name="idcategorie" aria-label="Default select example">
+                                                <select className="form-select"  name="idcategorie" aria-label="Default select example">
 
+                                                    {listcategorie.map((z) => (
+                                                        <>
 
+                                                        if(contenues.idcategorie!==z.id){
+
+                                                        <option value={z.id}>{z.nomcategorie}</option>
+
+                                                        }else{
+                                                            <option value={z.id} selected>{z.nomcategorie}</option>
+
+                                                        }
+                                            </>
+                                                    ))}
 
                                                 </select>
 
@@ -173,9 +93,57 @@ export default function ContenueUpdate({contenues}) {
                                         </div>
 
                                     </div>
-                                    <button  className="btn btn-primary" onClick={addPara} >Ajout Paragraphe</button>
                                 </div>
-                                {paragraphes}
+
+                                {paragraphes.map((p) => (
+                                    <>
+                                        <div className="card">
+                                            <div className="card-body">
+                                                <h2 className="card-title">p</h2>
+
+                                                <div className="row g-3">
+                                                    <div className="col-md-12">
+                                                        <div className="form-floating">
+                                                            <input type="text" value={p.titrepara} name="titrepara[]" className="form-control" id="floatingName"
+                                                                   placeholder="Your Name"></input>
+                                                            <label htmlFor="floatingName">titre</label>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-md-6">
+                                                        <div className="form-floating">
+
+                                                            <input type="file" name="imagepara[]" className="form-control" id="floatingEmail"
+                                                                   placeholder="Your Email"></input>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-md-6">
+                                                        <div className="form-floating">
+                                                            <input type="text" className="form-control"
+                                                                   name="descritimage[]" value={p.descritimage} id="floatingPassword" ></input>
+                                                            <label htmlFor="floatingPassword">descrit image</label>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-12">
+                                                        <div className="form-floating">
+                                                    <textarea name="descriptione[]" value={p.descriptione} className="form-control" placeholder="Address"
+                                                              id="floatingTextarea" ></textarea>
+                                                            <label htmlFor="floatingTextarea">paragrapne</label>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </>
+
+
+
+                                    ))}
+
                             </div>
                             <input type="submit" className="btn btn-success"   value="valider"></input>
 

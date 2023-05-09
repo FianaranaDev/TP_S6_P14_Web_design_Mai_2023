@@ -86,9 +86,14 @@ class ContenueController extends Controller
     public function update($id){
         $id=explode('-',$id)[0];
         $contenues=Contenue::find($id);
+        $listcategorie=Categorie::all();
+        $paragraphes=Paragraphe::where('idcontenue','=',$id)->get();
+
         return Inertia::render('BO/ContenueUpdate',
             [
-                'contenues'=>$contenues
+                'contenues'=>$contenues,
+                'listcategorie'=>$listcategorie,
+                'paragraphes'=>$paragraphes
             ]
         );
     }
