@@ -1,16 +1,11 @@
-\c postgres
-DROP DATABASE ia;
-CREATE DATABASE ia;
-\c ia;
 
 
-
+DROP TABLE Categorie CASCADE ; DROP TABLE Contenue CASCADE;DROP TABLE Paragraphe CASCADE;
 
 CREATE TABLE Categorie(
                           id SERIAL PRIMARY KEY NOT NULL,
                           nomCategorie VARCHAR(100)  NOT NULL
 );
-INSERT INTO Categorie(nomCategorie) VALUES ('Élévation'),('pourquoi'),('11eme');
 
 
 CREATE TABLE Contenue (
