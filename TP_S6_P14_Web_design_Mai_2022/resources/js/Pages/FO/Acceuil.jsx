@@ -12,7 +12,7 @@ export default function getContenue({contenue,listcategorie,recent}){
     return(
         <>
             <Head>
-                <title>List Contenue</title>
+                <title>List Aleatoire</title>
                 <meta name="description" content="List Contenue-ia-information"/>
 
             </Head>
@@ -32,7 +32,7 @@ export default function getContenue({contenue,listcategorie,recent}){
 
                         {/*  Contenue      */}
                             <div className="col-md-9">
-                                <h1 class="category-title">List </h1>
+                                <h1 class="category-title">List Aleatoire</h1>
                                     <Contenues contenue={contenue.data}/>
                                 {/*  Pagination      */}
                                     <Pagination contenue={contenue}/>

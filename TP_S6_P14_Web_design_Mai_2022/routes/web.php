@@ -17,7 +17,6 @@ use Inertia\Inertia;
 */
 
 
-Route::get('/user', [App\Http\Controllers\UtilisateurController::class, 'create']);
 //Front office
     //page acceuil
         Route::get('/',[App\Http\Controllers\ContenueController::class,'getAcceuil']);
